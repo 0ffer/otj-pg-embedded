@@ -224,9 +224,9 @@ public class EmbeddedPostgres implements Closeable
 
         final ProcessBuilder builder = new ProcessBuilder(args);
 
-        builder.redirectErrorStream(true);
-        builder.redirectError(errorRedirector);
-        builder.redirectOutput(outputRedirector);
+//        builder.redirectErrorStream(true);
+//        builder.redirectError(errorRedirector);
+//        builder.redirectOutput(outputRedirector); // TODO Clean redirectors. I want to stay only constant log output.
         final Process postmaster = builder.start();
 
         if (outputRedirector.type() == ProcessBuilder.Redirect.Type.PIPE) {
